@@ -20,26 +20,50 @@ const Signin = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const resp = await axios.post(
+      const res = await axios.post(
         `http://localhost:4000/users/signin`,
         formdata
       );
-
-      if (resp.data.status === true) {
-        toast.success(resp.data.message);
-        localStorage.setItem('token', resp.data.token);
-        localStorage.setItem('userdata', JSON.stringify(resp.data.user));
+      if (res.data.status == true) {
+        toast.success(res.data.message);
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('userdata', JSON.stringify(res.data.user));
         setLoading(false);
         navigate('/');
       } else {
-        toast.error(resp.data.message);
         setLoading(false);
       }
     } catch (error) {
+      toast.error('Invalid Password.!!');
+
       setLoading(false);
-      console.log(error);
     }
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   try {
+  //     const resp = await axios.post(
+  //       `http://localhost:4000/users/signin`,
+  //       formdata
+  //     );
+
+  //     if (resp.data.status === true) {
+  //       toast.success(resp.data.message);
+  //       localStorage.setItem('token', resp.data.token);
+  //       localStorage.setItem('userdata', JSON.stringify(resp.data.user));
+  //       setLoading(false);
+  //       navigate('/');
+  //     } else {
+  //       toast.error(resp.data.message);
+  //       setLoading(false);
+  //     }
+  //   } catch (error) {
+  //     setLoading(false);
+  //     console.log(error);
+  //   }
+  // };
   return (
     <div className="min-h-screen mt-20">
       <div className="flex flex-col md:flex-row md:items-center p-3 max-w-3xl mx-auto gap-5">

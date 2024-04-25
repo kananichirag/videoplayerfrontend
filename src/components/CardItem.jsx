@@ -1,4 +1,4 @@
-import { Button, Card } from 'flowbite-react';
+import { Button, Card, Label } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 
 const CardItem = ({ item }) => {
@@ -11,11 +11,19 @@ const CardItem = ({ item }) => {
           alt=""
         />
       </div>
-      <div className="p-5">
-        <a href="#">
-          <h5 className="mb-2 text-2xl text-center font-serif font-ca font-bold tracking-tight text-gray-900 dark:text-white">
-            {item.name}
-          </h5>
+      <div className="p-3">
+        <h5 className="mb-2 text-2xl text-center font-serif font-ca font-bold tracking-tight text-gray-900 dark:text-white">
+          {item.name}
+        </h5>
+      </div>
+      <div className="flex flex-col p-3 mb-3">
+        <Label className='text-xl font-semibold mb-2'>Link :</Label>
+        <a
+          href={`${item.url}`}
+          target="_blank"
+          className="mb-2 text-md font-ca font-bold tracking-tight cursor-pointer text-gray-900 "
+        >
+          {item.url}
         </a>
       </div>
       <Link to={`/post/${item._id}`}>
