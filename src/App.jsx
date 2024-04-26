@@ -7,11 +7,15 @@ import Signup from './pages/Signup';
 import { Toaster } from 'react-hot-toast';
 import PostPage from './components/PostPage';
 import PriveteRoute from './components/PriveteRoute';
+import Render from './pages/Render';
 
 function App() {
   return (
     <BrowserRouter>
       <Toaster />
+      <Routes>
+        <Route path="/render" element={<Render />}></Route>
+      </Routes>
       <Navbarc />
       <Routes>
         <Route path="/signin" element={<Signin />}></Route>
