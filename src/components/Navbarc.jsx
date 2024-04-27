@@ -65,7 +65,7 @@ const Navbarc = () => {
         </Dropdown>
 
         {token ? (
-          <Link to="/signin">
+          <Link to="/">
             <Button
               gradientDuoTone="purpleToBlue"
               outline
@@ -75,7 +75,7 @@ const Navbarc = () => {
             </Button>
           </Link>
         ) : (
-          <Link to="/signin">
+          <Link to="/">
             <Button gradientDuoTone="purpleToBlue" outline>
               Sign In
             </Button>
@@ -85,12 +85,6 @@ const Navbarc = () => {
         <NavbarToggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link active={path === '/'} as={'div'}>
-          <Link to="/">Home</Link>
-        </Navbar.Link>
-        <Navbar.Link as={'div'}>
-          <Link>About</Link>
-        </Navbar.Link>
         <Navbar.Link active={path === '/dashboard'} as={'div'}>
           <Link to="/dashboard">Admin</Link>
         </Navbar.Link>

@@ -27,7 +27,7 @@ const Signup = () => {
       if (resp.data.status == true) {
         toast.success(resp.data.message);
         setLoading(false);
-        navigate('/signin');
+        navigate('/');
       } else {
         toast.error(resp.data.message);
         setLoading(false);
@@ -42,7 +42,7 @@ const Signup = () => {
       <div className="flex flex-col md:flex-row md:items-center p-3 max-w-3xl mx-auto gap-5">
         {/* Left Side Div */}
         <div className="flex-1">
-          <Link to="/" className=" text-4xl font-bold dark:text-white">
+          <Link  className=" text-4xl font-bold dark:text-white">
             <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
               My
             </span>
@@ -83,7 +83,7 @@ const Signup = () => {
 
           <div className="flex gap-2 text-sm mt-5">
             <span>Have an Account?</span>
-            <Link to="/signin" className="text-blue-600">
+            <Link to="/" className="text-blue-600">
               Sign In
             </Link>
           </div>

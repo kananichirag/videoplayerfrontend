@@ -8,6 +8,7 @@ import { Toaster } from 'react-hot-toast';
 import PostPage from './components/PostPage';
 import PriveteRoute from './components/PriveteRoute';
 import Render from './pages/Render';
+import CountDown from './pages/CountDown';
 
 function App() {
   return (
@@ -15,13 +16,13 @@ function App() {
       <Toaster />
       <Routes>
         <Route path="/render" element={<Render />}></Route>
+        <Route path="count" element={<CountDown />}></Route>
       </Routes>
       <Navbarc />
       <Routes>
-        <Route path="/signin" element={<Signin />}></Route>
+        <Route path="/" element={<Signin />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route element={<PriveteRoute />}>
-          <Route path="/" element={<Home />}></Route>
           <Route path="/post/:id" element={<PostPage />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
         </Route>

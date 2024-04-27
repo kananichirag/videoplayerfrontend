@@ -1,5 +1,6 @@
 import { Button, Card, Label } from 'flowbite-react';
 import { Link } from 'react-router-dom';
+import CpoyButton from './CpoyButton';
 
 const CardItem = ({ item }) => {
   return (
@@ -17,7 +18,7 @@ const CardItem = ({ item }) => {
         </h5>
       </div>
       <div className="flex flex-col p-3 mb-3">
-        <Label className='text-xl font-semibold mb-2'>Link :</Label>
+        <Label className="text-xl font-semibold mb-2">Link :</Label>
         <a
           href={`${item.url}`}
           target="_blank"
@@ -25,6 +26,7 @@ const CardItem = ({ item }) => {
         >
           {item.url}
         </a>
+        <CpoyButton text={item.url} />
       </div>
       <Link to={`/post/${item._id}`}>
         <div className="flex justify-center ">

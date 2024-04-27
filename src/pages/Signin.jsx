@@ -29,7 +29,7 @@ const Signin = () => {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('userdata', JSON.stringify(res.data.user));
         setLoading(false);
-        navigate('/');
+        navigate('/dashboard?tab=profile');
       } else {
         setLoading(false);
       }

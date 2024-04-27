@@ -15,7 +15,7 @@ const SideBar = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('userdata');
     toast.success('sign Out successfully.!!');
-    navigate('/signin');
+    navigate('/');
   };
   return (
     <Sidebar className="w-full md:w-56">

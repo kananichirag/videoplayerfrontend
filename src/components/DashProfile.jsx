@@ -22,7 +22,7 @@ const DashProfile = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('userdata');
     toast.success('sign Out successfully.!!');
-    navigate('/signin');
+    navigate('/');
   };
   return (
     <div className="max-w-lg mx-auto p-3 w-full">
